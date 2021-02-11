@@ -1,0 +1,169 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: Ubuntu, Helvetica, Arial, sans-serif;
+}
+header {
+  background-color: #f8f8f8;
+  margin-top: 0;
+  padding: 0.5em;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+}
+main{
+    background-color: slategrey;
+    height: 100%;
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 1 0 auto;
+}
+.container{
+
+}
+
+nav.container{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+.brand,
+.links{
+    width: 100%;
+    min-width: 320px;
+}
+.brand>*{
+    text-align: center;
+}
+.brand {
+  margin: 0.5em auto;
+  padding: 0.25em;
+  display: flex;
+  flex-flow: column nowrap;
+  
+}
+.brand-name {
+  font-size: 1.55rem;
+  font-family: Lora;
+  margin: 0;
+}
+.brand-motto {
+  color: #1792d2;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'Ubuntu';
+  font-size: 0.75rem;
+  margin: 0.25em;
+}
+
+.links{
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 0.5em auto;
+    padding: 0.25em;
+    min-width: 200px;
+    min-height: 2em;
+    justify-content: flex-start;
+
+
+    /* border: 1px solid blue; */
+}
+.link{
+    list-style: none;
+    text-transform: uppercase;
+    flex: 1 1 auto;
+    min-width: 25px;
+    margin-right: 0.5em;
+    font-size: 0.8rem;
+}
+
+.link > a{
+    font-size: 1rem;
+    display: block;
+    color: #707070;
+    width: 75px;
+    height: 30px;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 0.25em;
+}
+.link>a:hover{
+    border-bottom: 4px solid #1792D2;
+    color:#1792D2;
+}
+
+
+.footer {
+  flex-shrink: 0; /* flex-grow | flex-shrink | flex-basis */
+  background-color: #f8f8f8;
+  padding: 1.5em; /* this em is based on the font-size of the .footer element */
+}
+
+.copyright {
+    color:#1792D2;
+  text-align: center;
+  font-size: 0.75rem;
+  border: 1px solid white;
+  padding: 0;
+}
+
+/*applies to devices with a width of 426px or higher */
+@media (min-width: 426px){
+    .container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      nav.container{
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+      }
+      .brand>*{
+          justify-content: flex-start;
+          text-align: left;
+      }
+      .brand,
+      .links{
+          max-width: 400px;
+      }
+
+
+}
+
+/* applies to devices with a width of 325px or lower */
+@media (max-width: 325px){
+    .links{
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .link{
+        margin: 0.25em;
+    }
+    .link:hover>a{
+        
+        border: none;
+        background-color:rgba(0, 0, 0, 0.05)
+    }
+}
+
+/* applies to devices with a width between 326px and 425px. */
+@media (min-width: 326px) and (max-width: 425px){
+
+}
