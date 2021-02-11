@@ -14,12 +14,14 @@ body {
   display: flex;
   flex-flow: column nowrap;
   font-family: Ubuntu, Helvetica, Arial, sans-serif;
+  min-width: max-content;
 }
 header {
   background-color: #f8f8f8;
   margin-top: 0;
   padding: 0.5em;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+  z-index: 999;
 }
 main{
     background-color: slategrey;
@@ -41,6 +43,7 @@ nav.container{
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    
 }
 .brand,
 .links{
@@ -106,7 +109,16 @@ nav.container{
     border-bottom: 4px solid #1792D2;
     color:#1792D2;
 }
-
+.btn-menu{
+    display: none;
+    max-width: 100px;
+    max-height: 50px;
+    background-color: #1792d2;
+    padding: 0.5em;
+    text-decoration: none;
+    text-align: center;
+    color: white;
+}
 
 .footer {
   flex-shrink: 0; /* flex-grow | flex-shrink | flex-basis */
@@ -123,7 +135,7 @@ nav.container{
 }
 
 /*applies to devices with a width of 426px or higher */
-@media (min-width: 426px){
+@media (min-width: 769px){
     .container {
         width: 80%;
         max-width: 1200px;
@@ -140,6 +152,7 @@ nav.container{
       }
       .brand,
       .links{
+          min-width: 320px;
           max-width: 400px;
       }
       main{
@@ -155,13 +168,17 @@ nav.container{
 
 /* applies to devices with a width of 325px or lower */
 @media (max-width: 325px){
+    .btn-menu{
+        display: block;
+    }
     .links{
+        display: none;
         flex-flow: column nowrap;
         align-items: center;
         justify-content: space-evenly;
     }
     .link{
-        margin: 0.25em;
+        display: none;
     }
     .link:hover>a{
         
@@ -171,6 +188,15 @@ nav.container{
 }
 
 /* applies to devices with a width between 326px and 425px. */
-@media (min-width: 326px) and (max-width: 425px){
-
+@media (min-width: 326px) and (max-width: 768px){
+    .btn-menu{
+        display: none;
+    }
+    .link>a{
+        text-align: center;
+        margin: 0 auto;
+    }
+    .links{
+        max-width: 500px;
+    }
 }
