@@ -142,8 +142,15 @@ nav.container{
       .links{
           max-width: 400px;
       }
-
-
+      main{
+          display: flex;
+          flex-flow: column nowrap;
+          border: 1px solid white;
+      }
+      main>div.container{
+          background-color: #1792d2;
+          margin: 1em auto;
+      }
 }
 
 /* applies to devices with a width of 325px or lower */
